@@ -1,0 +1,25 @@
+.banner-section {
+  /* height: 100vh; */
+  background-image: url("https://themewagon.github.io/believe/images/slider-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+}
+
+/*--------------------------------------------------------------------------
+  For mobile:  
+  ---------------------------------------------------------------------------*/
+@media only screen and (max-width: 480px) {
+  .banner-section {
+    /* background-image: url("https://wp.xpeedstudio.com/charitious/wp-content/uploads/2018/06/slider_4.jpg"); */
+  }
+}
