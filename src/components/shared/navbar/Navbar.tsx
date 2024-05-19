@@ -4,7 +4,7 @@ import { MenuItems } from "./MenuItems";
 
 const Navbar = () => {
   return (
-    <div className="navbar z-40 bg-base-100  mx-auto shadow-lg lg:rounded lg:mt-3 ">
+    <div className="navbar bg-base-100  mx-auto shadow-lg lg:rounded lg:mt-3 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const Navbar = () => {
           </div>
           <MenuItems
             classes={
-              "menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              "menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 z-50 "
             }
           />
         </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex lg:flex-1 lg:justify-end ">
-        <MenuItems classes={"menu menu-horizontal px-1"} />
+        <MenuItems classes={"menu menu-horizontal px-1 z-50"} />
       </div>
     </div>
   );
