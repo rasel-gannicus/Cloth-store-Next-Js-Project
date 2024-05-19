@@ -1,14 +1,28 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
-
-export const MenuItems = ({ classes }) => {
+export const MenuItems = ({ classes }: { classes: string }) => {
   return (
     <ul className={classes}>
-      <li className="md:me-5">
-        <Link href="/supplies" className='bg-gray-200 font-medium'>
-        All Supplies
-        </Link>
-      </li>
+        <li>
+          <a>Item 1</a>
+        </li>
+        <li>
+          <details>
+            <summary>Parent</summary>
+            <ul className="p-2">
+              <li>
+                <a>Submenu 1</a>
+              </li>
+              <li>
+                <a>Submenu 2</a>
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <a>Item 3</a>
+        </li>
       <li>
         <details>
           <summary>
@@ -23,11 +37,11 @@ export const MenuItems = ({ classes }) => {
           </summary>
           <ul className="p-2">
             <li className=" my-2">
-              <Link href='/dashboard'>Dashboard</Link>
+              <Link href="/dashboard">Dashboard</Link>
             </li>
             <hr className="mx-auto" />
             <li>
-              <Link href='/login'>Login</Link>
+              <Link href="/login">Login</Link>
             </li>
           </ul>
         </details>

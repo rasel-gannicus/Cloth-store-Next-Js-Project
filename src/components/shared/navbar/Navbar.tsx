@@ -4,7 +4,7 @@ import { MenuItems } from "./MenuItems";
 
 const Navbar = () => {
   return (
-    <div className="navbar z-40 bg-base-100 lg:w-3/4 mx-auto shadow-lg lg:rounded lg:mt-3 ">
+    <div className="navbar z-40 bg-base-100 lg:max-w-[1220px] mx-auto shadow-lg lg:rounded lg:mt-3 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
