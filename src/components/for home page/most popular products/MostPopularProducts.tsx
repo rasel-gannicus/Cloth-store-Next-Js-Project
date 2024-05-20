@@ -1,5 +1,6 @@
 import { TCloths } from "@/types/types";
 import PopularProductCard from "./Popular Products Card/PopularProductCard";
+import Link from "next/link";
 
 const MostPopularProducts = async () => {
   // --- fetching data with ISR method
@@ -13,12 +14,7 @@ const MostPopularProducts = async () => {
   );
 
   const data = await res.json();
-  //   if (data.length > 0) {
-  //     // Sort the products by ratings in descending order and get the top 3
-  //     const topRatedProducts = [...data]
-  //       .sort((a, b) => b.Ratings - a.Ratings)
-  //       .slice(0, 3);
-  //   }
+
   const topRatedProducts = [...data]
     .sort((a, b) => b.Ratings - a.Ratings)
     .slice(0, 6);
@@ -31,9 +27,11 @@ const MostPopularProducts = async () => {
           </h2>
           <p className="text-gray-500 my-5">See our most rated products here</p>
         </div>
-        <button className="btn btn-neutral md:btn-lg rounded-full ">
-          View All
-        </button>
+        <Link href={"/products"}>
+          <button className="btn btn-neutral md:btn-lg rounded-full ">
+            View All
+          </button>
+        </Link>
       </div>
 
       <div className="my-10 md:grid md:grid-cols-4 grid grid-cols-1 gap-y-10">
