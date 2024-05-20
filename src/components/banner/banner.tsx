@@ -33,7 +33,7 @@ interface DemoSliderProps {
 
 const Banner = () => {
   return (
-    <>
+    <div  className="my-10">
       <Swiper
         navigation
         pagination={{ type: "bullets", clickable: true }}
@@ -48,7 +48,7 @@ const Banner = () => {
           <BannerCard2 />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 
