@@ -31,7 +31,9 @@ const FlashSale = async () => {
         </div>
         <div className="text-center">
           <Link href={"/flash-sale"}>
-            <button className="btn text-xl rounded-none px-10  btn-warning mx-auto">See All</button>
+            <button className="btn text-xl rounded-none px-10  btn-warning mx-auto">
+              See All
+            </button>
           </Link>
         </div>
       </div>

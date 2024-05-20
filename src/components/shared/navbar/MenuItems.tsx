@@ -4,25 +4,25 @@ import { ReactNode } from "react";
 export const MenuItems = ({ classes }: { classes: string }) => {
   return (
     <ul className={classes}>
-        <li>
-          <a>Item 1</a>
-        </li>
-        <li>
-          <details>
-            <summary>Parent</summary>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <a>Item 3</a>
-        </li>
+      <li className="bg-orange-400 rounded font-semibold text-white hover:text-black">
+        <Link href={"/flash-sale"}>Flash Sale</Link>
+      </li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul className="p-2">
+            <li>
+              <a>Submenu 1</a>
+            </li>
+            <li>
+              <a>Submenu 2</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <a>Item 3</a>
+      </li>
       <li>
         <details>
           <summary>
