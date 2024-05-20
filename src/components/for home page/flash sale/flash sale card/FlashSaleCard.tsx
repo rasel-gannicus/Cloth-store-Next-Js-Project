@@ -1,22 +1,25 @@
+import { TCloths } from "@/types/types";
 import React from "react";
 
-const FlashSaleCard = () => {
+const FlashSaleCard = ({data} : {data : TCloths}) => {
+    // console.log(data);
   return (
-    <div className="card-normal w-[95%] mx-auto md:w-full bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
+    data?.FlashSale && <div className="card-normal w-[95%] mx-auto md:w-full bg-base-100 shadow-xl">
+    <figure>
+      <img
+        src={data.Images}
+        alt="Shoes"
+        className="mx-auto p-2"
+      />
+    </figure>
+    <div className="card-body">
+      <h2 className="card-title">{data.Title}</h2>
+      <p>{data.Description}</p>
+      <div className="card-actions justify-end">
+        <button className="btn btn-primary">Buy Now</button>
       </div>
     </div>
+  </div>
   );
 };
 
