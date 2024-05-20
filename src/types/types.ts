@@ -10,4 +10,5 @@ export interface TCloths {
     Brand : string ;
     Category : string ;
     Description : string ;
+    flashSaleEndTime ? : string ;
 }

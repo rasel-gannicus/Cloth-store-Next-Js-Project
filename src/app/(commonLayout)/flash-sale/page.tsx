@@ -12,7 +12,7 @@ const FlashSaleAll = async () => {
   );
   const data = await res.json();
   return (
-    <div>
+    <div  className=" mx-auto">
       <h2 className="text-center mt-10 text-4xl font-bold">Hurry Up ! </h2>
       <h2 className="text-center my-3 text-4xl font-bold">
         Before the <span className="text-red-500">Sale Ends </span> !
