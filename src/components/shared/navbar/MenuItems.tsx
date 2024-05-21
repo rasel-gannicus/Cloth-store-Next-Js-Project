@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ReactNode } from "react";
 
 export const MenuItems = ({ classes }: { classes: string }) => {
   return (
@@ -21,7 +20,7 @@ export const MenuItems = ({ classes }: { classes: string }) => {
         </details>
       </li>
       <li>
-        <a>Item 3</a>
+        <Link href={"/products"}>All Products</Link>
       </li>
       <li>
         <details>

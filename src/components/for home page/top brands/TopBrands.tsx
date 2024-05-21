@@ -13,7 +13,7 @@ const TopBrands = () => {
 
       <div className="grid md:grid-cols-3 gap-5 py-5">
         {/* --- first row --- */}
-        <Link href={""}>
+        <Link href={"/products/mens-wear"}>
           <div className="bg-slate-800 p-5 relative hover:shadow-xl hover:cursor-pointer transition-all ">
             <Image
               src={
@@ -31,7 +31,7 @@ const TopBrands = () => {
 
         {/* --- mid row --- */}
         <div className=" grid gap-4">
-          <Link href={""}>
+          <Link href={"/products/kids-wear"}>
             <div className="bg-slate-900 h-[202px] p-5 relative hover:shadow-xl hover:cursor-pointer transition-all mid-div">
               <div className="absolute bottom-8 left-8">
                 <h2 className="text-4xl font-bold text-white">Kids</h2>
@@ -49,7 +49,7 @@ const TopBrands = () => {
         </div>
 
         {/* --- last row --- */}
-        <Link href={""}>
+        <Link href={"/products/women-clothing"}>
           <div className="bg-slate-800 p-5 relative hover:shadow-xl hover:cursor-pointer transition-all ">
             <Image
               src={
