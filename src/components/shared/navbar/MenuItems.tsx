@@ -11,13 +11,13 @@ export const MenuItems = ({ classes }: { classes: string }) => {
           <summary>Category</summary>
           <ul className="p-2">
             <li>
-              <Link href={"/products/mens-wear"}> Men's </Link>
+              <Link href={"/products/mens-wear"}> Men&apos;s </Link>
             </li>
             <li>
-            <Link href={"/products/women-clothing"}> Women's </Link>
+            <Link href={"/products/women-clothing"}> Women&apos;s </Link>
             </li>
             <li>
-              <Link href={"/products/kids-wear"}> Kid's </Link>
+              <Link href={"/products/kids-wear"}> Kid&apos;s </Link>
             </li>
           </ul>
         </details>
