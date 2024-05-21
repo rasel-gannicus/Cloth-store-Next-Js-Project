@@ -14,7 +14,7 @@ const FlashSale = async () => {
   );
   const data = await res.json();
   return (
-    <div>
+    <div className="w-[95%] mx-auto md:w-full ">
       <div>
         <h2 className="text-4xl font-bold text-center mt-20">
           Our Current Flash Sales Items
