@@ -8,19 +8,22 @@ export const MenuItems = ({ classes }: { classes: string }) => {
       </li>
       <li>
         <details>
-          <summary>Parent</summary>
+          <summary>Category</summary>
           <ul className="p-2">
             <li>
-              <a>Submenu 1</a>
+              <Link href={"/products/mens-wear"}> Men's </Link>
             </li>
             <li>
-              <a>Submenu 2</a>
+            <Link href={"/products/women-clothing"}> Women's </Link>
+            </li>
+            <li>
+              <Link href={"/products/kids-wear"}> Kid's </Link>
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <Link href={"/products"}>All Products</Link>
+        <Link href={"/products/all"}>All Products</Link>
       </li>
       <li>
         <details>
