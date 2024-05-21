@@ -1,10 +1,17 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Sidebar = () => {
+  const [show, setShow] = useState(false);
+  const handleSidebar = () => {
+    setShow(!show);
+    // console.log(show);
+  };
   return (
-    <div>
+    <div className="relative">
       <button
+        onClick={() => handleSidebar()}
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
@@ -26,10 +33,31 @@ const Sidebar = () => {
           ></path>
         </svg>
       </button>
-
+      <div
+        onClick={() => handleSidebar()}
+        className={`bg-black  absolute  top-2 right-2 cursor-pointer w-10 h-10 text-white flex justify-center items-center text-4xl rounded-full p-0 m-0 md:hidden ${
+          !show && "hidden"
+        }`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
       <aside
+        onClick={() => handleSidebar()}
         id="default-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 "
+        className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0 ${
+          !show && "-translate-x-full "
+        }`}
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-blue-950 dark:bg-gray-800">
