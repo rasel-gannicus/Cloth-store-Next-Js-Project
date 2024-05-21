@@ -5,9 +5,9 @@ import './style.css' ;
 
 const TopBrands = () => {
   return (
-    <div className="py-20">
-      <h2 className="text-4xl font-semibold text-center">Top Categories</h2>
-      <p className="text-lg text-center my-5">
+    <div className="py-20 w-[95%] mx-auto md:w-full ">
+      <h2 className="text-xl md:text-4xl font-semibold text-center">Top Categories</h2>
+      <p className="md:text-lg text-xs text-center my-5">
         Visit the Categories which are famous on our site
       </p>
 

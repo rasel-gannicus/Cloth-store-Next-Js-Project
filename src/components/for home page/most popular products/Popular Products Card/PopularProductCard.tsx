@@ -2,7 +2,7 @@ import { TCloths } from "@/types/types";
 
 const PopularProductCard = ({data} : {data : TCloths}) => {
   return (
-    <div className="md:max-w-80 w-[95%] mx-5">
+    <div className="md:max-w-80 w-[95%] mx-auto">
       <div className="rounded overflow-hidden">
         <img
           src={data.Images}

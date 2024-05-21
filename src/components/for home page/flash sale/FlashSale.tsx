@@ -16,7 +16,7 @@ const FlashSale = async () => {
   return (
     <div className="w-[95%] mx-auto md:w-full ">
       <div>
-        <h2 className="text-4xl font-bold text-center mt-20">
+        <h2 className=" text-xl md:text-4xl font-bold text-center mt-20">
           Our Current Flash Sales Items
         </h2>
         <hr className="border-2 w-3/4 mx-auto my-5" />

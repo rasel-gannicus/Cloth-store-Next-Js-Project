@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const MenuItems = ({ classes }: { classes: string }) => {
@@ -29,10 +30,12 @@ export const MenuItems = ({ classes }: { classes: string }) => {
         <details>
           <summary>
             <div className="w-5 h-5 rounded-full flex gap-2">
-              <img
+              <Image
                 alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                src="https://i.ibb.co/WVwLvtn/Fj-U2lkc-WYAg-NG6d.jpg"
                 className="rounded-full"
+                width={100}
+                height={100}
               />
               <p className="md:hidden">Profile</p>
             </div>
