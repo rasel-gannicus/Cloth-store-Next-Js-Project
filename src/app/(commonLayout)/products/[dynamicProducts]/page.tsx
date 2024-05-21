@@ -6,16 +6,13 @@ interface TDynamicProducts {
 }
 
 const DynamicProducts = async ({ params }: { params: TDynamicProducts }) => {
-  
   let { dynamicProducts } = params;
 
-  //   --- fetching data from server with ISR
+  //   --- fetching data from server with SSR
   const res = await fetch(
     "https://server-for-assignment-8.vercel.app/allCloths",
     {
-      next: {
-        revalidate: 30,
-      },
+      cache: "no-store",
     }
   );
   const data = await res.json();
@@ -32,7 +29,7 @@ const DynamicProducts = async ({ params }: { params: TDynamicProducts }) => {
   } else {
     filteredData = data;
   }
-  
+
   return (
     <div className="py-10">
       <h2 className="text-2xl md:text-4xl font-semibold text-center mb-10">
