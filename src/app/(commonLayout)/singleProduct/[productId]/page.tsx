@@ -5,6 +5,7 @@ interface TProductId {
   productId: string[];
 }
 
+// --- implementing SSG 
 export const generateStaticParams = async() => {
   const res = await fetch("https://server-for-assignment-8.vercel.app/allCloths")
   const cloths = await res.json() ;
@@ -14,7 +15,7 @@ export const generateStaticParams = async() => {
 }
 
 const SingleProduct = async ({ params }: { params: TProductId }) => {
-  // console.log(params);
+  
   // --- fetching data with SSG(Static Site Generation) method
   const res = await fetch(
     `https://server-for-assignment-8.vercel.app/cloths/${params.productId}`,
