@@ -3,7 +3,7 @@ import React from "react";
 import FlashSaleCountdown from "../flash sale countdown/FlashSaleCountdown";
 
 const FlashSaleCard = ({data} : {data : TCloths}) => {
-    // console.log(data);
+    
   return (
     data.FlashSale && <div className="card w-[95%] mx-auto md:w-full bg-base-100 shadow-xl">
     <figure className="relative">

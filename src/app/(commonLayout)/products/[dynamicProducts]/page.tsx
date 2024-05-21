@@ -6,7 +6,7 @@ interface TDynamicProducts {
 }
 
 const DynamicProducts = async ({ params }: { params: TDynamicProducts }) => {
-  //   console.log(params);
+  
   let { dynamicProducts } = params;
 
   //   --- fetching data from server with ISR
@@ -32,10 +32,10 @@ const DynamicProducts = async ({ params }: { params: TDynamicProducts }) => {
   } else {
     filteredData = data;
   }
-  //   console.log(filteredData);
+  
   return (
     <div className="py-10">
-      <h2 className="text-4xl font-semibold text-center mb-10">
+      <h2 className="text-2xl md:text-4xl font-semibold text-center mb-10">
         Showing
         <span className="text-pink-600">
           {dynamicProducts == "women-clothing" && " Women "}

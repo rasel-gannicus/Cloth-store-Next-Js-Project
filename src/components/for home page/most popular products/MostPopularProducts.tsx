@@ -27,7 +27,7 @@ const MostPopularProducts = async () => {
           </h2>
           <p className="text-gray-500 my-5">See our most rated products here</p>
         </div>
-        <Link href={"/products"}>
+        <Link href={"/top-products"}>
           <button className="btn btn-neutral md:btn-lg rounded-full ">
             View All
           </button>
