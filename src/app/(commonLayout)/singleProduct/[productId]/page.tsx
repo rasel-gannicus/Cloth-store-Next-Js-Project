@@ -1,13 +1,23 @@
+import { TCloths } from "@/types/types";
 import React, { cache } from "react";
 
 interface TProductId {
   productId: string[];
 }
 
+export const generateStaticParams = async() => {
+  const res = await fetch("https://server-for-assignment-8.vercel.app/allCloths")
+  const cloths = await res.json() ;
+  return cloths.slice(0,10).map((items : TCloths)=>({
+    productId : items._id
+  }))
+}
+
 const SingleProduct = async ({ params }: { params: TProductId }) => {
+  // console.log(params);
   // --- fetching data with SSG(Static Site Generation) method
   const res = await fetch(
-    `https://server-for-assignment-8.vercel.app/cloths/${params.productId[1]}`,
+    `https://server-for-assignment-8.vercel.app/cloths/${params.productId}`,
     {
       cache: "force-cache",
     }
