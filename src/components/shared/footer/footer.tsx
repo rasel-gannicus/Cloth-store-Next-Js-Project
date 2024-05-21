@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
           </nav>
         </footer>
-        <div className="mb-5 border-b-2 border-dashed w-full"></div>
+        <div className="mb-5 border-b-2 border-gray-100 border-dashed w-full"></div>
         <p className="text-center text-neutral-content pb-5">&copy; Copyright all right reserved 2024</p>
       </div>
     );

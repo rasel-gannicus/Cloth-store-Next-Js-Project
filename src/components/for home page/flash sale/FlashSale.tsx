@@ -29,9 +29,9 @@ const FlashSale = async () => {
             <h2>No data found</h2>
           )}
         </div>
-        <div className="text-center">
+        <div className="text-center my-10">
           <Link href={"/flash-sale"}>
-            <button className="btn text-xl rounded-none px-10  btn-warning mx-auto">
+            <button className="btn  rounded-none px-10  btn-neutral btn-lg mx-auto">
               See All
             </button>
           </Link>
