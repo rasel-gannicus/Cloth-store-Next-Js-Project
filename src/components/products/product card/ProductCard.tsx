@@ -24,12 +24,11 @@ const ProductCard = ({ data }: { data: TCloths }) => {
         </div>
         <p className="text-gray-400">{data.Description}</p>
         <div className="card-actions justify-end">
-          <Link href={`/${data?.gender}/${data._id}`}>
+          <Link href={`/singleProduct/${data?.gender}/${data._id}`}>
             <button className="btn btn-neutral hover:btn-ghost">
               View Details
             </button>
           </Link>
-
           <button className="btn btn-neutral hover:btn-warning">Buy Now</button>
         </div>
       </div>

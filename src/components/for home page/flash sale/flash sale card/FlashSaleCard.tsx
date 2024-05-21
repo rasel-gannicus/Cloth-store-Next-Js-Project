@@ -1,6 +1,7 @@
 import { TCloths } from "@/types/types";
 import React from "react";
 import FlashSaleCountdown from "../flash sale countdown/FlashSaleCountdown";
+import Link from "next/link";
 
 const FlashSaleCard = ({data} : {data : TCloths}) => {
     
@@ -20,8 +21,13 @@ const FlashSaleCard = ({data} : {data : TCloths}) => {
       <h2 className="card-title">{data.Title}</h2>
       <p>{data.Description}</p>
       <div className="card-actions justify-end">
-        <button className="btn btn-neutral">Buy Now</button>
-      </div>
+          <Link href={`/singleProduct/${data?.gender}/${data._id}`}>
+            <button className="btn btn-neutral hover:btn-ghost">
+              View Details
+            </button>
+          </Link>
+          <button className="btn btn-neutral hover:btn-warning">Buy Now</button>
+        </div>
     </div>
   </div>
   );
