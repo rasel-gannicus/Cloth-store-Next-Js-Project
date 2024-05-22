@@ -58,7 +58,7 @@ const Sidebar = () => {
 
 
       <aside
-        onClick={() => handleSidebar()}
+        onClick={() => setShow(false)}
         id="default-sidebar"
         className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform sm:translate-x-0 ${
           !show && "-translate-x-full "
