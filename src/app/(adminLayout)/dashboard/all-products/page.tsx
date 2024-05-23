@@ -1,4 +1,5 @@
 import { TCloths } from "@/types/types";
+import Image from "next/image";
 import React from "react";
 
 const AllProducts = async () => {
@@ -16,8 +17,9 @@ const AllProducts = async () => {
       <tr key={item._id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
         <th
           scope="row"
-          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-start items-center gap-3"
         >
+          <Image width={50} height={50} alt="product image" src={item.Images} />
           {item.Title}
         </th>
         <td className="px-6 py-4">{item.Category}</td>
