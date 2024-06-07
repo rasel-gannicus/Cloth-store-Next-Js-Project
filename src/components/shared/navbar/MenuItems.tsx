@@ -4,7 +4,7 @@ import Link from "next/link";
 export const MenuItems = ({ classes }: { classes: string }) => {
   return (
     <ul className={classes}>
-      <li className="bg-orange-400 rounded font-semibold text-white hover:text-black">
+      <li className="bg-orange-400 rounded font-semibold text-black hover:text-black">
         <Link href={"/flash-sale"}>Flash Sale</Link>
       </li>
       <li>
@@ -40,7 +40,7 @@ export const MenuItems = ({ classes }: { classes: string }) => {
               <p className="md:hidden">Profile</p>
             </div>
           </summary>
-          <ul className="p-2">
+          <ul className="p-2 text-black">
             <li className=" my-2">
               <Link href="/dashboard">Dashboard</Link>
             </li>

@@ -37,7 +37,7 @@ const Banner = () => {
       <Swiper
         navigation
         pagination={{ type: "bullets", clickable: true }}
-        autoplay={true}
+        autoplay={false}
         loop={true}
         modules={[Autoplay, Navigation, Pagination]}
       >

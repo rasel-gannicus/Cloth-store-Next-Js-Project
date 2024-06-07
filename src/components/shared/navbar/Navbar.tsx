@@ -5,7 +5,7 @@ import logo from '@/assets/img/logo cloth.png'
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100  mx-auto shadow-lg lg:rounded lg:mt-3 z-50 lg:max-w-[1250px]  md:px-16 lg:px-12">
+    <div className="navbar bg-slate-900 text-white   mx-auto shadow-lg lg:rounded lg:mt-3 z-50 lg:max-w-[1250px]  md:px-16 lg:px-2">
       <div className="navbar-start ">
         <div className="dropdown z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +26,7 @@ const Navbar = () => {
           </div>
           <MenuItems
             classes={
-              "menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 z-50 "
+              "menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 z-50"
             }
           />
         </div>
@@ -40,6 +40,7 @@ const Navbar = () => {
                 src={logo}
                 width={60}
                 height={60}
+                className="rounded-sm"
               />
               <p className="font-bold text-2xl">Cotton Club</p>
             </Link>

@@ -5,7 +5,7 @@ import TopBrands from "@/components/for home page/top brands/TopBrands";
 
 export default function Home() {
   return (
-    <div className="lg:max-w-[1250px] mx-auto">
+    <div className="lg:max-w-[1750px] mx-auto">
       <Banner />
       <FlashSale /> 
       <TopBrands /> 
