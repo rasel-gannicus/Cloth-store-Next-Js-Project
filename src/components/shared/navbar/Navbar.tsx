@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MenuItems } from "./MenuItems";
+import logo from '@/assets/img/logo cloth.png'
 
 const Navbar = () => {
   return (
@@ -33,13 +34,14 @@ const Navbar = () => {
         <div className="flex gap-1 navbar-center justify-center items-center">
           {/* --- Navbar Logo --- */}
           <div className=" order-2 md:order-1  p-1 mr-2 ">
-            <Link href="/" className="">
+            <Link href="/" className="flex justify-center items-center gap-3">
               <Image
                 alt="Logo for Navbar"
-                src="https://shafik720.github.io/Responsive-website-with-vanilla-html-css---4-Cloth-Shop-/images/logo.png"
-                width={120}
-                height={120}
+                src={logo}
+                width={60}
+                height={60}
               />
+              <p className="font-bold text-2xl">Cotton Club</p>
             </Link>
           </div>
         </div>
