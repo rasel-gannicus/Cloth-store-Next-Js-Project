@@ -6,7 +6,7 @@ import Link from "next/link";
 const FlashSaleCard = ({data} : {data : TCloths}) => {
     
   return (
-    data.FlashSale && <div className="card w-[95%] mx-auto md:w-full bg-base-100 shadow-xl">
+    data.FlashSale && <div className="card w-[95%] lg:w-[400px]   bg-base-100 shadow-xl mx-auto">
     <figure className="relative">
       <img
         src={data.Images}

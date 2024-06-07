@@ -10,7 +10,7 @@ export const MenuItems = ({ classes }: { classes: string }) => {
       <li>
         <details>
           <summary>Category</summary>
-          <ul className="p-2">
+          <ul className="p-2 text-black">
             <li>
               <Link href={"/products/mens-wear"}> Men&apos;s </Link>
             </li>
