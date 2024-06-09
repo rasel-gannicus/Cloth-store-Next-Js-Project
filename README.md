@@ -1,6 +1,6 @@
-# HexaShop - Clothing Store - Men, Women, and Children's Apparel
+# Cotton Club
 
-Welcome to our Hexashop Clothing Store! This project showcases a comprehensive online platform for shopping Men’s, Women’s, and Children’s clothing. Built using modern web technologies, this platform offers a seamless shopping experience with a focus on performance and user-friendly design.
+Welcome to our Cotton Club Clothing Store! This project showcases a comprehensive online platform for shopping Men’s, Women’s, and Children’s clothing. Built using modern web technologies, this platform offers a seamless shopping experience with a focus on performance and user-friendly design.
 
 ## Technologies Used
 
