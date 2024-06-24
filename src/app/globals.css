@@ -8,6 +8,10 @@
 
 .custom-container {
     background-color: gray;
-    max-width: 1220px;
+    /* max-width: 1220px; */
     margin: auto;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    display: none !important;
 }

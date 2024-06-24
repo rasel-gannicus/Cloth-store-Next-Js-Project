@@ -5,11 +5,13 @@ import TopBrands from "@/components/for home page/top brands/TopBrands";
 
 export default function Home() {
   return (
-    <div className="lg:max-w-[1750px] mx-auto">
+    <div className="mx-auto">
       <Banner />
-      <FlashSale /> 
-      <TopBrands /> 
-      <MostPopularProducts />
+      <div className="lg:max-w-[1450px] mx-auto">
+        <FlashSale />
+        <TopBrands />
+        <MostPopularProducts />
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import logo from '@/assets/img/logo cloth.png'
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-slate-900 text-white   mx-auto shadow-lg lg:rounded lg:mt-3 z-50 lg:max-w-[1250px]  md:px-16 lg:px-2">
+    <div className="navbar bg-slate-900 text-white   mx-auto shadow-lg   z-50   md:px-16 lg:px-2">
       <div className="navbar-start ">
         <div className="dropdown z-50">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

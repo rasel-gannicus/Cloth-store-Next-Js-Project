@@ -33,11 +33,11 @@ interface DemoSliderProps {
 
 const Banner = () => {
   return (
-    <div  className="my-10">
+    <div  className="">
       <Swiper
         navigation
         pagination={{ type: "bullets", clickable: true }}
-        autoplay={true}
+        autoplay={false}
         loop={true}
         modules={[Autoplay, Navigation, Pagination]}
       >
