@@ -31,7 +31,7 @@ const DynamicProducts = async ({ params }: { params: TDynamicProducts }) => {
   }
 
   return (
-    <div className="py-10">
+    <div className="py-10 px-10 md:max-w-[1450px]">
       <h2 className="text-2xl md:text-4xl font-semibold text-center mb-10">
         Showing
         <span className="text-pink-600">
