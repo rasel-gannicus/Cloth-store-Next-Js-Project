@@ -1,7 +1,7 @@
 .banner-section {
-  /* height: 100vh; */
+  height: 100vh;
   background-image: url("https://themewagon.github.io/believe/images/slider-1.jpg");
-  background-position: center;
+  background-position: top ;
   background-repeat: no-repeat;
   background-size: cover;
 }
