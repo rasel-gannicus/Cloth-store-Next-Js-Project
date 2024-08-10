@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { MenuItems } from "./MenuItems";
@@ -14,8 +15,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { signIn } from "next-auth/react";
 
 const Navbar = () => {
+  console.log(process.env.NEXT_APP_GITHUB_ID);
   return (
     <header className="absolute left-0 right-0 z-50 top-0 flex h-16 items-center gap-4  px-4 md:px-6">
       <nav className="hidden  flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 text-white">
@@ -112,7 +115,9 @@ const Navbar = () => {
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem>
+              <button onClick={() => signIn("github")}>Login</button>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -121,53 +126,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  <div className="navbar absolute top-0  text-white   mx-auto   z-50   md:px-16 lg:px-2">
-    <div className="navbar-start ">
-      <div className="dropdown z-50">
-        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
-          </svg>
-        </div>
-        <MenuItems
-          classes={
-            "menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 z-50"
-          }
-        />
-      </div>
-
-      <div className="flex gap-1 navbar-center justify-center items-center">
-        {/* --- Navbar Logo --- */}
-        <div className=" order-2 md:order-1  p-1 mr-2 ">
-          <Link href="/" className="flex justify-center items-center gap-3">
-            <Image
-              alt="Logo for Navbar"
-              src={logo}
-              width={60}
-              height={60}
-              className="rounded-sm"
-            />
-            <p className="font-bold text-2xl">Cotton Club</p>
-          </Link>
-        </div>
-      </div>
-    </div>
-
-    <div className="navbar-center hidden lg:flex lg:flex-1 lg:justify-end ">
-      <MenuItems classes={"menu menu-horizontal px-1 z-50"} />
-    </div>
-  </div>;
-}
