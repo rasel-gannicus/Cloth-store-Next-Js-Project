@@ -1,8 +1,5 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
-import { MenuItems } from "./MenuItems";
-import logo from "@/assets/img/logo 123.png";
 import { CircleUser, Menu, Package2, Search } from "lucide-react";
 import {
   DropdownMenu,
@@ -15,12 +12,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  console.log(process.env.NEXT_APP_GITHUB_ID);
+  const urlPath = usePathname();
+  const isHomePage = urlPath === "/";
   return (
-    <header className="absolute left-0 right-0 z-50 top-0 flex h-16 items-center gap-4  px-4 md:px-6">
+    <header
+      className={`absolute left-0 right-0 z-50 top-0 flex h-16 items-center gap-4  px-4 md:px-6 ${
+        !isHomePage && "bg-black"
+      }`}
+    >
       <nav className="hidden  flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 text-white">
         {/* <Link href="/" className="flex justify-center items-center gap-3">
           <Image
@@ -29,7 +32,7 @@ const Navbar = () => {
             className="rounded-sm max-w-80 w-10 "
           />
         </Link> */}
-        <Link href="#" className=" transition-colors hover:text-foreground">
+        <Link href="/" className=" transition-colors hover:text-foreground">
           Home
         </Link>
         <Link href="#" className=" transition-colors hover:text-foreground">
@@ -116,7 +119,7 @@ const Navbar = () => {
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <button onClick={() => signIn("github")}>Login</button>
+              <Link href="/authentication/login">Login</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
