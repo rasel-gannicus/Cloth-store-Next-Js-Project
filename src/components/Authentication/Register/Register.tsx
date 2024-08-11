@@ -11,10 +11,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import SocialLogin from "../Social Login/SocialLogin";
 
 const Register = () => {
+  
   return (
     <div className="w-full lg:grid lg:min-h-[500px] lg:grid-cols-2 xl:min-h-[300px] ">
       <div className="flex items-center justify-center py-12 lg:border-t lg:border-l lg:border-b">
@@ -56,6 +56,8 @@ const Register = () => {
               >
                 Create an account
               </Button>
+
+              {/* --- social login --- */}
               <SocialLogin />
             </div>
             <div className="mt-4 text-center text-sm">
