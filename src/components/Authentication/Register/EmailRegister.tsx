@@ -5,16 +5,22 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { registerUser } from "@/utils/Authentication/registerUser";
 import { useState } from "react";
+import { ring2 } from "ldrs";
+import { useRouter } from "next/navigation";
 
 const EmailRegister = () => {
+  ring2.register(); // --- loading spinner
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
+  const { toast } = useToast(); // --- toast from ShadCn
 
+  const router = useRouter();
+
+  //   --- submitting the form
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (password !== repassword) {
@@ -51,7 +57,7 @@ const EmailRegister = () => {
         toast({
           description: res.message + " Now login please !",
         });
-        //   dispatch(goToPage("login"));
+        router.push("/authentication/login");
       }
     } catch (err: any) {
       setLoading(false);
@@ -115,8 +121,23 @@ const EmailRegister = () => {
           type="password"
         />
       </div>
-      <Button type="submit" className="w-full  hover:text-white bg-[#FFC700]">
-        Create an account
+      <Button
+        type="submit"
+        disabled={loading}
+        className="w-full  hover:text-white bg-[#FFC700]"
+      >
+        {loading ? (
+          <l-ring-2
+            size="30"
+            stroke="5"
+            stroke-length="0.25"
+            bg-opacity="0.1"
+            speed="0.8"
+            color="white"
+          ></l-ring-2>
+        ) : (
+          "Create an account"
+        )}
       </Button>
     </form>
   );
