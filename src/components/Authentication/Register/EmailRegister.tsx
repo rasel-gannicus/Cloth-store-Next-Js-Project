@@ -9,7 +9,7 @@ import { ring2 } from "ldrs";
 import { useRouter } from "next/navigation";
 
 const EmailRegister = () => {
-  ring2.register(); // --- loading spinner
+  // ring2.register(); // --- loading spinner
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
