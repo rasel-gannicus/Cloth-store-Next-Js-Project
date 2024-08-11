@@ -5,11 +5,10 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { registerUser } from "@/utils/Authentication/registerUser";
 import { useState } from "react";
-import { ring2 } from "ldrs";
 import { useRouter } from "next/navigation";
+import { TailSpin } from "react-loader-spinner";
 
 const EmailRegister = () => {
-  // ring2.register(); // --- loading spinner
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -127,14 +126,16 @@ const EmailRegister = () => {
         className="w-full  hover:text-white bg-[#FFC700]"
       >
         {loading ? (
-          <l-ring-2
-            size="30"
-            stroke="5"
-            stroke-length="0.25"
-            bg-opacity="0.1"
-            speed="0.8"
-            color="white"
-          ></l-ring-2>
+          <TailSpin
+            visible={true}
+            height="30"
+            width="30"
+            color="#ddd"
+            ariaLabel="tail-spin-loading"
+            radius="1"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
         ) : (
           "Create an account"
         )}

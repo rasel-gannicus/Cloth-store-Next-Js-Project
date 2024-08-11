@@ -4,14 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { loginUser } from "@/utils/Authentication/loginUser";
-import { ring2 } from "ldrs";
 import { Link } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-// import 'ldrs/ring2'
+import { TailSpin } from 'react-loader-spinner'
+
 
 const EmailLogin = () => {
-//   ring2.register(); // --- loading spinner
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -82,16 +81,18 @@ const EmailLogin = () => {
           required
         />
       </div>
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full" disabled={loading}>
         {loading ? (
-          <l-ring-2
-            size="30"
-            stroke="5"
-            stroke-length="0.25"
-            bg-opacity="0.1"
-            speed="0.8"
-            color="white"
-          ></l-ring-2>
+          <TailSpin
+          visible={true}
+          height="30"
+          width="30"
+          color="white"
+          ariaLabel="tail-spin-loading"
+          radius="1"
+          wrapperStyle={{}}
+          wrapperClass=""
+          />
         ) : (
           "Login"
         )}
