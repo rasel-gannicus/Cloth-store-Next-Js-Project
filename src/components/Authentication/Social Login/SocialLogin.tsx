@@ -8,7 +8,7 @@ const SocialLogin = () => {
     // console.log(process.env.NEXT_PUBLIC_CLIENT_SITE_URL);
   return (
     <div>
-      <p className="text-center font-semibold text-slate-500 mb-3">
+      <p className="text-center font-semibold text-slate-500 my-4">
         Or Sign in with
       </p>
       <div className="flex justify-center items-center gap-4">
