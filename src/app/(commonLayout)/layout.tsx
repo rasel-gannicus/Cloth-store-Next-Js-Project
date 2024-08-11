@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/footer";
 import CustomWrapper from "@/components/Custom Wrapper/CustomWrapper";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
           <CustomWrapper>{children}</CustomWrapper>
         </div>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

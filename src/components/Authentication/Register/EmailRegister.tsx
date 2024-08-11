@@ -2,49 +2,65 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/use-toast";
 import { registerUser } from "@/utils/Authentication/registerUser";
 import { useState } from "react";
 
 const EmailRegister = () => {
   const [firstName, setFirstName] = useState("");
-  const [secondName, setSecondName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = async(e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (password !== repassword) {
-        // window.alert("Password didn't matched");
-        toast.error("Password didn't matched");
-        return;
-      }
-      if (password.length < 6) {
-        toast.error("Password should be atleast 6 characters long !");
-        return;
-      }
-      try {
-        setLoading(true);
-        const res = await registerUser({
-          name,
-          email,
-          password,
-        });
-        if (!res.success) {
-          setLoading(false);
-          toast(res.message);
-        }
-        if (res.success) {
-          setLoading(false);
-          toast.success(res.message + " Now login please !");
-        //   dispatch(goToPage("login"));
-        }
-      } catch (err: any) {
+      // window.alert("Password didn't matched");
+      toast({
+        description: "Password didn't matched",
+        variant: "destructive",
+      });
+      return;
+    }
+    if (password.length < 6) {
+      toast({
+        description: "Password should be atleast 6 characters long !",
+        variant: "destructive",
+      });
+      return;
+    }
+    try {
+      setLoading(true);
+      let name = firstName + " " + lastName;
+      const res = await registerUser({
+        name,
+        email,
+        password,
+      });
+      if (!res.success) {
         setLoading(false);
-        toast.error(err.message);
-        throw new Error(err.message);
+        toast({
+          description: res.message,
+        });
       }
+      if (res.success) {
+        setLoading(false);
+        toast({
+          description: res.message + " Now login please !",
+        });
+        //   dispatch(goToPage("login"));
+      }
+    } catch (err: any) {
+      setLoading(false);
+      toast({
+        variant: "destructive",
+        description: err.message || "An error happened",
+      });
+      throw new Error(err.message);
+    }
   };
   return (
     <form onSubmit={handleSubmit} className="grid gap-4">
@@ -62,8 +78,8 @@ const EmailRegister = () => {
         <div className="grid gap-2">
           <Label htmlFor="last-name">Last name</Label>
           <Input
-            value={secondName}
-            onChange={(e) => setSecondName(e.target.value)}
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             id="last-name"
             placeholder="Rasel"
             required
