@@ -14,6 +14,8 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import logo from "@/assets/img/cap.png";
 
 const Navbar = () => {
   const urlPath = usePathname();
@@ -24,14 +26,14 @@ const Navbar = () => {
         !isHomePage && "bg-black"
       }`}
     >
-      <nav className="hidden  flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 text-white">
-        {/* <Link href="/" className="flex justify-center items-center gap-3">
+      <nav className="hidden  flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 text-white relative">
+        <Link href="/" className="flex justify-center items-center gap-3">
           <Image
             alt="Logo for Navbar"
             src={logo}
-            className="rounded-sm max-w-80 w-10 "
+            className="rounded-sm max-w-80 w-12 absolute left-0 -top-7 -rotate-[20deg] "
           />
-        </Link> */}
+        </Link>
         <Link href="/" className=" transition-colors hover:text-foreground">
           Home
         </Link>
