@@ -1,4 +1,5 @@
 import Link from "next/link";
+import userImage from "@/assets/img/smile.png";
 import { CircleUser, Menu, Package2, Search, Users } from "lucide-react";
 import {
   DropdownMenu,
@@ -15,7 +16,12 @@ import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "@/assets/img/cap 2.png";
-import { useAppSelector } from "@/utils/Redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/utils/Redux/hooks";
+import Modal from "@/components/Modal/Modal";
+import {
+  activeModal,
+  closeModal,
+} from "@/utils/Redux/features/modal/modalSlice";
 
 const UserNavbar = () => {
   const urlPath = usePathname();
@@ -23,6 +29,8 @@ const UserNavbar = () => {
 
   const userState = useAppSelector((state) => state.userSlice.user);
   const { name, email, image } = userState;
+
+  const dispatch = useAppDispatch();
   return (
     <header
       className={`absolute left-0 right-0 z-50 top-0 flex h-16 items-center gap-4  px-4 md:px-6 ${
@@ -114,8 +122,23 @@ const UserNavbar = () => {
         {/* --- user submenu --- */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="secondary" size="icon" className="rounded-full">
-              <CircleUser className="h-5 w-5" />
+            <Button
+              variant="secondary"
+              size="icon"
+              className="rounded-full overflow-hidden"
+            >
+              {/* <CircleUser className="h-5 w-5" /> */}
+              {image ? (
+                <Image
+                  alt="user image"
+                  width={30}
+                  height={30}
+                  style={{ width: "100%" }}
+                  src={image}
+                />
+              ) : (
+                <Image alt="user image" src={userImage} />
+              )}
               <span className="sr-only">Toggle user menu</span>
             </Button>
           </DropdownMenuTrigger>
@@ -126,7 +149,12 @@ const UserNavbar = () => {
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Button className="bg-pink-600">Logout</Button>
+              <Button
+                onClick={() => dispatch(activeModal(false))}
+                className="bg-pink-600"
+              >
+                Logout
+              </Button>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

@@ -10,5 +10,6 @@ export const loginUser = async (data: any) => {
     cache: "no-store",
   });
   const userInfo = await res.json();
+  console.log(userInfo);
   return userInfo;
 };

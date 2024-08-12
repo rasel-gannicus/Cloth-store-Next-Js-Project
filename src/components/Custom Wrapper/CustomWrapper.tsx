@@ -4,6 +4,7 @@ import { addUserToRedux } from "@/utils/Redux/features/user/userSlice";
 import { useAppDispatch } from "@/utils/Redux/hooks";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
+import Modal from "../Modal/Modal";
 
 const CustomWrapper = ({
   children,
@@ -31,6 +32,7 @@ const CustomWrapper = ({
       } `}
     >
       {children}
+      <Modal modalStatus={true} />
     </div>
   );
 };
