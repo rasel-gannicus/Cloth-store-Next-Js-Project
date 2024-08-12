@@ -7,6 +7,7 @@ import CustomWrapper from "@/components/Custom Wrapper/CustomWrapper";
 import { Toaster } from "@/components/ui/toaster";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/NextAuth/authOptions";
+import ReduxProvider from "@/utils/Redux/ReduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,15 +37,17 @@ export default async function RootLayout({
 }>) {
   const session = await getServerSession(authOptions);
   return (
-    <html lang="en">
-      <body className={ubuntu.className}>
-        <Navbar />
-        <div className="min-h-screen mx-auto">
-          <CustomWrapper session={session}>{children}</CustomWrapper>
-        </div>
-        <Footer />
-        <Toaster />
-      </body>
-    </html>
+    <ReduxProvider>
+      <html lang="en">
+        <body className={ubuntu.className}>
+          <Navbar />
+          <div className="min-h-screen mx-auto">
+            <CustomWrapper session={session}>{children}</CustomWrapper>
+          </div>
+          <Footer />
+          <Toaster />
+        </body>
+      </html>
+    </ReduxProvider>
   );
 }

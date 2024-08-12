@@ -1,7 +1,9 @@
 "use client";
 
+import { addUserToRedux } from "@/utils/Redux/features/user/userSlice";
+import { useAppDispatch } from "@/utils/Redux/hooks";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 
 const CustomWrapper = ({
   children,
@@ -12,6 +14,15 @@ const CustomWrapper = ({
 }) => {
   const isHomePage = usePathname() === "/";
   console.log(session);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (session?.user.email) {
+      dispatch(addUserToRedux(session?.user));
+      // dispatch(addUserToRedux(session));
+    }
+  }, [session, dispatch]);
   return (
     <div
       className={`${
