@@ -32,7 +32,7 @@ const CustomWrapper = ({
       } `}
     >
       {children}
-      <Modal modalStatus={true} />
+      <Modal />
     </div>
   );
 };
